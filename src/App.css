@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Additional styles if needed */
+.ingredient-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.player-card {
+  transition: transform 0.2s ease-in-out;
+}
+
+.player-card:hover {
+  transform: translateY(-5px);
+}
+
+.category-btn {
+  transition: all 0.2s ease;
+}
+
+.category-btn:hover {
+  transform: scale(1.05);
+}
