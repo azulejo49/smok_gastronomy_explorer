@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";      ///ver.1.0.0
 
 const CookingStage = ({ selectedIngredients, onBack, onClearIngredients }) => {
   // State to manage the current cooking step (progression from 0 to 3)
@@ -52,7 +52,7 @@ const CookingStage = ({ selectedIngredients, onBack, onClearIngredients }) => {
     if (localIngredients.length > 0 && cookingStep < 3) {
       const timer = setInterval(() => {
         setCookingStep(prev => (prev >= 3 ? prev : prev + 1));
-      }, 14600);
+      }, 10000);
       return () => clearInterval(timer);
     }
   }, [localIngredients, cookingStep]);
@@ -157,9 +157,9 @@ const CookingStage = ({ selectedIngredients, onBack, onClearIngredients }) => {
   };
 
   // Unique ingredients for display
-//  const uniqueIngredients = localIngredients.filter(
- //   (ing, index, self) => index === self.findIndex(i => i.id === ing.id)
-//  );
+  // const uniqueIngredients = localIngredients.filter(
+  //   (ing, index, self) => index === self.findIndex(i => i.id === ing.id)
+  // );
 
   return (
     <div className="flex flex-col items-center min-h-screen py-4 bg-gray-200 relative">
@@ -271,9 +271,6 @@ const CookingStage = ({ selectedIngredients, onBack, onClearIngredients }) => {
   </svg>
 </div>
 
-
-
-
           {/* Cooking Pot SVG */}
           <svg width="180" height="160" viewBox="0 0 200 180" className="mx-auto">
             {/* Pot Structure */}
@@ -339,60 +336,40 @@ const CookingStage = ({ selectedIngredients, onBack, onClearIngredients }) => {
             </div>
           )}
 
-          {/* Truffle Icon - click to add */}
+          {/* Truffle Icon - replaced with JPG images */}
           {showTruffle && (
             <div
               className="absolute -right-20 top-20 w-24 h-24 cursor-pointer transform transition-transform hover:scale-110 animate-pulse"
               title="Click to add truffle"
             >
-              {/* Truffle icons container */}
+              {/* Container for both truffles */}
               <div className="flex space-x-4">
-                {/* Black Truffle Icon */}
+                {/* Black Truffle Image */}
                 {showBlackTruffle && (
                   <div
                     className="w-24 h-24 cursor-pointer"
                     onClick={() => handleAddTruffle("black")}
                     title="Click to add Black Truffle"
                   >
-                    <svg viewBox="0 0 150 150" width="100%" height="100%">
-                      {/* Larger base shape */}
-                      <ellipse cx="75" cy="75" rx="60" ry="45" fill="#222" stroke="#444" strokeWidth="3"/>
-                      {/* Spots */}
-                      <circle cx="52.5" cy="60" r="6" fill="#444"/>
-                      <circle cx="90" cy="52.5" r="4.5" fill="#444"/>
-                      <circle cx="67.5" cy="90" r="3.75" fill="#444"/>
-                      <circle cx="82.5" cy="82.5" r="4.5" fill="#444"/>
-                      <circle cx="60" cy="75" r="3" fill="#444"/>
-                      <circle cx="97.5" cy="75" r="3.75" fill="#444"/>
-                      <circle cx="75" cy="67.5" r="3" fill="#444"/>
-                      <circle cx="60" cy="90" r="3" fill="#444"/>
-                      <circle cx="90" cy="90" r="3" fill="#444"/>
-                      <circle cx="75" cy="97.5" r="2.25" fill="#444"/>
-                    </svg>
+                    <img
+                      src="/images/blacktruff.jpg"
+                      alt="Black Truffle"
+                      className="w-full h-full object-cover rounded"
+                    />
                   </div>
                 )}
-                {/* White Truffle Icon */}
+                {/* White Truffle Image */}
                 {showWhiteTruffle && (
                   <div
                     className="w-24 h-24 cursor-pointer"
                     onClick={() => handleAddTruffle("white")}
                     title="Click to add White Truffle"
                   >
-                    <svg viewBox="0 0 300 300" width="100%" height="100%">
-                      {/* White base */}
-                      <ellipse cx="150" cy="150" rx="120" ry="90" fill="#fff" stroke="#444" strokeWidth="4"/>
-                      {/* Spots */}
-                      <circle cx="70" cy="80" r="10" fill="#000" stroke="#000" strokeWidth="1"/>
-                      <circle cx="120" cy="70" r="8" fill="#000" stroke="#000" strokeWidth="1"/>
-                      <circle cx="90" cy="120" r="7" fill="#000" stroke="#000" strokeWidth="1"/>
-                      <circle cx="110" cy="110" r="8" fill="#000" stroke="#000" strokeWidth="1"/>
-                      <circle cx="80" cy="100" r="6" fill="#000" stroke="#000" strokeWidth="1"/>
-                      <circle cx="130" cy="100" r="7" fill="#000" stroke="#000" strokeWidth="1"/>
-                      <circle cx="100" cy="90" r="6" fill="#000" stroke="#000" strokeWidth="1"/>
-                      <circle cx="80" cy="120" r="6" fill="#000" stroke="#000" strokeWidth="1"/>
-                      <circle cx="120" cy="120" r="6" fill="#000" stroke="#000" strokeWidth="1"/>
-                      <circle cx="100" cy="130" r="5" fill="#000" stroke="#000" strokeWidth="1"/>
-                    </svg>
+                    <img
+                      src="/images/whitetruff.jpg"
+                      alt="White Truffle"
+                      className="w-full h-full object-cover rounded"
+                    />
                   </div>
                 )}
               </div>
@@ -573,15 +550,15 @@ const CookingStage = ({ selectedIngredients, onBack, onClearIngredients }) => {
             {showFireworks && (
               <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-0 left-1/4 animate-ping" style={{ animationDelay: '0.5s' }}>
-                  <svg width="60" height="80" viewBox="0 0 100 100">
+                  <svg width="80" height="80" viewBox="0 0 100 100">
                     <defs>
                       <radialGradient id="fireworkGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-                        <stop offset="40%" stopColor="#FF5252" />
-                        <stop offset="50%" stopColor="#FF9800" />
-                        <stop offset="40%" stopColor="#FFFFFF" stopOpacity="0" />
+                        <stop offset="0%" stopColor="#FF5252" />
+                        <stop offset="70%" stopColor="#FF9800" />
+                        <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0" />
                       </radialGradient>
                     </defs>
-                    <circle cx="80" cy="90" r="90" fill="url(#fireworkGradient)" />
+                    <circle cx="50" cy="50" r="40" fill="url(#fireworkGradient)" />
                     {[...Array(12)].map((_, i) => (
                       <line
                         key={i}

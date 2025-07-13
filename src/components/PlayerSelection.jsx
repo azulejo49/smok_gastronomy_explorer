@@ -20,12 +20,12 @@ const PlayerSelection = ({ onSelectPlayer }) => {
     { 
       id: 'hila', 
       name: 'HILA', 
-      image: '' 
+      image: '/images/hilacar_.jpg' 
     },
     { 
       id: 'amiram', 
       name: 'AMIRAM', 
-      image: '' 
+      image: '/images/amiramcar_.jpg' 
     },
     { 
       id: 'smok', 
@@ -42,7 +42,7 @@ const PlayerSelection = ({ onSelectPlayer }) => {
 
   return (
     <div className="flex flex-col items-center">
-      <h2 className="text-2xl font-bold mb-8">CHOOSE YOUR PLAYER</h2>
+      <h2 className="text-2xl font-bold mb-20">CHOOSE YOUR PLAYER</h2>
       <div className="flex flex-row gap-8 overflow-x-auto">
         {players.map(player => (
           <div 

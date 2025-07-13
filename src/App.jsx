@@ -50,7 +50,7 @@ function App() {
 
   return (
     <div className="min-h-screen">
-      <header className="bg-green-600 text-white p-4 shadow-md">
+      <header className="bg-gradient-to-br from-green-600 via-green-500 to-blue-500 text-white p-4 shadow-md">
         <h1 className="text-3xl font-bold text-center">Smok Gastronomy Explorer</h1>
         {selectedPlayer && (
           <div className="text-center mt-2">
