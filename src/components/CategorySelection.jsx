@@ -5,7 +5,7 @@ const CategorySelection = ({ onSelectCategory, onBack }) => {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="mb-9 flex justify-between items-center w-full">
+      <div className="mb-9 flex justify-center w-full">
         <button
           onClick={onBack}
           className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors flex items-center"

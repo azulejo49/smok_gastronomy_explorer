@@ -1,4 +1,6 @@
 // SMOK=DRAGON(POLISH)
+app made for children 3-8 years old, with a focus on food and gastronomy. The app is designed to be interactive and educational, with a focus on introducing children to different types of food and their cultural significance. The app includes a variety of games and activities that encourage children to explore the world of food and learn about different cuisines from around the world.
+# React + Vite Project Setup
 
 # React + Vite
 
@@ -33,7 +35,7 @@ smok_gastronomy_ex/
 │   ├── App.css                   # Main CSS styles
 │   ├── App.jsx                   # Root React component
 │   ├── index.css                 # Entry CSS
-│   ├── index.js                  # Entry point for React
+│   ├── //index.js//-----                 # Entry point for React
 │   └── main.jsx                  # Main React rendering
 ├── .gitignore                    # Files to ignore in Git
 ├── eslintrc.config.js            # ESLint configuration

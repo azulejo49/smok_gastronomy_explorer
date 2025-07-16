@@ -38,7 +38,7 @@ const ingredients = [
   },
   { 
     id: 7, 
-    name: 'Hemp Seeds', 
+    name: 'Jute Seeds', 
     category: 'seeds', 
     image: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="300" height="200"><rect x="30" y="30" width="40" height="40" rx="5" fill="%233CB371"/><rect x="40" y="20" width="20" height="60" rx="5" fill="%233CB371"/></svg>' 
   },
@@ -307,6 +307,19 @@ const ingredients = [
     name: 'Eggplant', 
     category: 'vegetables', 
     image: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="300" height="200"><path d="M30,30 C40,20 60,20 70,30 C80,40 80,60 70,70 C60,80 40,80 30,70 C20,60 20,40 30,30 Z" fill="%23808080"/><path d="M40,20 L60,20" stroke="%23000000" stroke-width="2"/><path d="M45,15 L55,15" stroke="%23000000" stroke-width="2"/><path d="M40,80 L60,80" stroke="%23000000" stroke-width="2"/></svg>' 
+  },
+  { 
+    id: 51, 
+    name: 'Jerusalem Artichoke=Batata Ksbia', 
+    category: 'vegetables', 
+    image: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="300" height="200"><path d="M30,30 C40,20 60,20 70,30 C80,40 80,60 70,70 C60,80 40,80 30,70 C20,60 20,40 30,30 Z" fill="%23808080"/><path d="M40,20 L60,20" stroke="%23000000" stroke-width="2"/><path d="M45,15 L55,15" stroke="%23000000" stroke-width="2"/><path d="M40,80 L60,80" stroke="%23000000" stroke-width="2"/></svg>' 
+  },
+  { 
+    id: 52, 
+    name: 'chickpea', 
+    category: 'vegetables', 
+    image: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="300" height="200"><path d="M30,30 C40,20 60,20 70,30 C80,40 80,60 70,70 C60,80 40,80 30,70 C20,60 20,40 30,30 Z" fill="%23808080"/><path d="M40,20 L60,20" stroke="%23000000" stroke-width="2"/><path d="M45,15 L55,15" stroke="%23000000" stroke-width="2"/><path d="M40,80 L60,80" stroke="%23000000" stroke-width="2"/></svg>' 
   }
 ];
+
 export default ingredients;

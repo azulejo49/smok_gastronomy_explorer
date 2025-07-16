@@ -121,7 +121,7 @@ body {
 
 .cooking-background {
   background-image: 
- /* url('/path/to/kitchen-image.jpg'),  Your kitchen image */
+  url('images/kitchen1.jpg'),  
     linear-gradient(
       rgba(112, 141, 165, 0.4), 
       rgba(130, 166, 192, 0.4)

@@ -415,4 +415,43 @@ Note: When layering images and gradients in CSS, the order matters: the first UR
 The most flexible way is to add an <img> element in your JSX, absolutely positioned behind your content.
 Alternatively, add the image to your CSS background-image property for layered backgrounds.
 
+----------
+ ensure that the ingredient data resets when switching players, you need to clear the selectedIngredients state in your parent component (where CookingStage is used) whenever the player changes.
+ Then, pass an empty array or reset the ingredients array as a prop.
+ parent component (say PlayersPage.jsx),
+when switching players, call the onClear function passed as prop,
+which should reset the selectedIngredients to an empty array. Example:
+// Inside parent component
+const [selectedIngredients, setSelectedIngredients] = useState([]);
 
+const handlePlayerChange = (newPlayer) => {
+  setSelectedIngredients([]); // Reset ingredients when switching players
+  // set current player, load their data, etc.
+};
+
+<CookingStage
+  selectedIngredients={selectedIngredients}
+  onBack={() => {/* go to previous page */}}
+  onClear={() => setSelectedIngredients([])}
+/>
+Summary
+When player data changes, reset the parent state selectedIngredients.
+Pass an empty array to CookingStage via selectedIngredients.
+Inside useEffect in CookingStage,
+the ingredients are synchronized whenever the prop updates, so ingredients will reset accordingly.
+-----------------------------------------------------
+----------------------------------------
+---TBD--position of icons-to the left+chef to the right+reset data when switching players+no ingred.txt red+,player name when playing-colour+size+DISABLE buttn.while cooking except fin.cook..(DONE).
+--cursor not allowed -for butt. back%clear(cooking stage)-Modified Button Styling - className={`... ${
+  isCooking ? "opacity-50 cursor-not-allowed" : ""
+}`}(DONE).
+--enhenced chef-(DONE)
+--enhenced flame-(DONE)
+-disable clear+back butt.when start.cook-(DONE)
+--truffle icon location to left,up -
+--progress bar disable when pressing "finish.cook"-the percentage-should -remain-
+--coloured percentage-
+--img implement.-player
+--enhance fire.w.-
+--decrease size of cook.inst-cont.- (DONE)
+--categ.+ingre.butt- center
