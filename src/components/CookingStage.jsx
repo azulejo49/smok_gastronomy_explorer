@@ -282,7 +282,7 @@ const CookingStage = ({ selectedIngredients, onBack, onClearIngredients }) => {
       {/* --- 2. Scene with pot, steam, bubbles, flame --- */}
       <div className="relative mb-6 flex justify-center w-full">
        {/* Chef illustration SVG - Enhanced Professional Version */}
-  <div className="absolute top-0 left-96 w-64 h-64"> {/* Changed from left-64 to left-80 */}
+  <div className="absolute top-0 left-96 w-64 h-64"> {/* Changed from left-64 to left-96 */}
     <svg width="120" height="120" viewBox="0 0 200 200" className="animate-bounce">
   {/* Chef Hat - Enhanced Realistic Version */}
 <g>
@@ -413,10 +413,49 @@ const CookingStage = ({ selectedIngredients, onBack, onClearIngredients }) => {
           {/* Top lid */}
           <ellipse cx="100" cy="60" rx="80" ry="15" fill="#777" />
 
-          {/* Content when cooking (if ingredients and step) */}
-          {localIngredients.length > 0 && cookingStep >= 1 && (
-            <ellipse cx="100" cy="110" rx="60" ry="20" fill="#8BC34A" opacity={0.8} />
-          )}
+          {/* Cooking content */}
+{localIngredients.length > 0 && cookingStep >= 1 && (
+  <>
+    {/* Base broth */}
+    <ellipse cx="100" cy="110" rx="60" ry="20" fill="#8BC34A" opacity={0.8} />
+    
+    {/* Small vegetables - relative to pot size */}
+    {/* Carrot slices */}
+    <circle cx="75" cy="105" r="4" fill="#FF9800" />
+    <circle cx="85" cy="110" r="3" fill="#FF9800" />
+    <circle cx="95" cy="107" r="5" fill="#FF9800" />
+    
+    {/* Peas - smallest vegetables */}
+    <circle cx="65" cy="108" r="2" fill="#4CAF50" />
+    <circle cx="70" cy="115" r="2" fill="#4CAF50" />
+    <circle cx="80" cy="113" r="2" fill="#4CAF50" />
+    <circle cx="90" cy="114" r="2" fill="#4CAF50" />
+    <circle cx="100" cy="112" r="2" fill="#4CAF50" />
+    <circle cx="110" cy="116" r="2" fill="#4CAF50" />
+    <circle cx="120" cy="110" r="2" fill="#4CAF50" />
+    
+    {/* Onion pieces */}
+    <ellipse cx="60" cy="110" rx="3" ry="4" fill="#E1BEE7" />
+    <ellipse cx="115" cy="105" rx="3" ry="4" fill="#E1BEE7" />
+    
+    {/* Garlic cloves */}
+    <ellipse cx="55" cy="107" rx="2" ry="3" fill="#FFFFFF" />
+    <ellipse cx="125" cy="112" rx="2" ry="3" fill="#FFFFFF" />
+    
+    {/* Potato chunks - slightly larger */}
+    <ellipse cx="105" cy="108" rx="5" ry="4" fill="#FFECB3" />
+    <ellipse cx="130" cy="110" rx="4" ry="3" fill="#FFECB3" />
+    
+    {/* Broccoli florets */}
+    <circle cx="70" cy="103" r="3" fill="#4CAF50" />
+    <circle cx="120" cy="103" r="3" fill="#4CAF50" />
+    
+    {/* Optional: Add some texture to the broth */}
+    <circle cx="85" cy="115" r="1" fill="#7CB342" opacity="0.5" />
+    <circle cx="105" cy="114" r="1" fill="#7CB342" opacity="0.5" />
+    <circle cx="125" cy="116" r="1" fill="#7CB342" opacity="0.5" />
+  </>
+)}
 
           {/* Bubbles */}
           {bubbles.map((b) => (
@@ -614,7 +653,7 @@ const CookingStage = ({ selectedIngredients, onBack, onClearIngredients }) => {
       </div>
 
       {/* --- 4. Ingredients list --- */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 mb-6">
+      <div className="flex justify-center w-full flex-wrap gap-3 mt-4">
         {(() => {
           const uniqueIngredients = Array.from(
             new Map(localIngredients.map((ing) => [ing.id, ing])).values()
@@ -637,7 +676,7 @@ const CookingStage = ({ selectedIngredients, onBack, onClearIngredients }) => {
                 </div>
               )}
               {/* Ingredient image */}
-              <img src={ing.image} alt={ing.name} className="w-10 h-10 object-cover rounded-full mr-2" />
+              <img src={ing.image} alt={ing.name} className="w-3 h-6 object-cover rounded-full mr-2" />
               <span className="font-medium text-sm">{ing.name}</span>
               </div>
             ))
@@ -704,59 +743,304 @@ const CookingStage = ({ selectedIngredients, onBack, onClearIngredients }) => {
               {/* Chef illustration SVG */}
               <svg width="120" height="120" viewBox="0 0 200 200">
                 {/* Your SVG for chef */}
-                <rect x="40" y="20" width="120" height="50" rx="10" fill="#FFFFFF" stroke="#000" strokeWidth="2" />
-                <circle cx="100" cy="100" r="50" fill="#FFD700" />
-                <circle cx="85" cy="90" r="5" fill="#000" />
-                <circle cx="115" cy="90" r="5" fill="#000" />
-                <path d="M85,115 Q100,125 115,115" stroke="#000" strokeWidth="2" fill="none" />
-              </svg>
+                {/* Chef Hat */}
+  <path d="M40,70 L160,70 L140,20 L60,20 Z" fill="#FFFFFF" stroke="#000" strokeWidth="2" />
+  <path d="M60,20 L140,20 L130,5 L70,5 Z" fill="#FFFFFF" stroke="#000" strokeWidth="2" />
+  <path d="M70,5 L130,5 L125,0 L75,0 Z" fill="#FFFFFF" stroke="#000" strokeWidth="2" />
+  <path d="M75,0 L125,0 L120,-5 L80,-5 Z" fill="#FFFFFF" stroke="#000" strokeWidth="2" />
+  
+  {/* Chef's Face */}
+  <circle cx="100" cy="100" r="40" fill="#FFD700" />
+  
+  {/* Chef's Eyes */}
+  <circle cx="85" cy="90" r="5" fill="#000" />
+  <circle cx="115" cy="90" r="5" fill="#000" />
+  
+  {/* Chef's Smile */}
+  <path d="M85,115 Q100,130 115,115" stroke="#000" strokeWidth="2" fill="none" />
+  
+  {/* Chef's Mustache */}
+  <path d="M75,105 Q85,95 95,105" stroke="#000" strokeWidth="2" fill="none" />
+  <path d="M105,105 Q115,95 125,105" stroke="#000" strokeWidth="2" fill="none" />
+  
+  {/* Chef's Uniform/Body */}
+  <path d="M70,140 L130,140 L150,180 L50,180 Z" fill="#FFFFFF" stroke="#000" strokeWidth="2" />
+  
+  -- Chef's Apron --
+  <path d="M80,140 L120,140 L125,180 L75,180 Z" fill="#FF6B6B" stroke="#000" strokeWidth="1" />
+  
+  -- Chef's Collar --
+  <path d="M80,140 L120,140 L125,130 L75,130 Z" fill="#FFFFFF" stroke="#000" strokeWidth="1" />
+  
+  -- Chef's Arms --
+  <path d="M70,140 L50,160" stroke="#FFFFFF" strokeWidth="8" strokeLinecap="round" />
+  <path d="M130,140 L150,160" stroke="#FFFFFF" strokeWidth="8" strokeLinecap="round" />
+  
+  -- Cooking Utensils --
+  <path d="M40,160 L20,180" stroke="#8B4513" strokeWidth="3" />
+  <circle cx="15" cy="185" r="8" fill="#8B4513" />
+  
+  -- Chef's Buttons --
+  <circle cx="90" cy="155" r="3" fill="#000" />
+  <circle cx="100" cy="155" r="3" fill="#000" />
+  <circle cx="110" cy="155" r="3" fill="#000" />
+  
+  -- Chef's Name Tag -
+  <rect x="85" y="170" width="30" height="10" fill="#FFFFFF" stroke="#000" strokeWidth="1" />
+  <text x="100" y="178" fontSize="6" textAnchor="middle" fill="#000">CHEF</text>
+</svg>
             </div>
             <h2 className="text-2xl font-bold text-center mb-4">🎉 Cooking Complete! 🎉</h2>
-            {showDelicious && (
-              <div className="flex justify-center mb-4">
-                <p className="text-3xl font-bold text-red-500 animate-bounce">Delicious!</p>
-              </div>
-            )}
-            <p className="text-center mb-6">Your dish is ready to serve!</p>
-            {/* Continue Button */}
-            <div className="flex justify-center space-x-4">
-              <button
-                onClick={() => {
-                  setShowCompletionPopup(false);
-                  setShowDelicious(false);
-                  setShowFireworks(false);
-                }}
-                className="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded-lg font-bold transition-colors"
-              >
-                Continue Cooking
-              </button>
-            </div>
-            {/* Fireworks SVG */}
-            {showFireworks && (
-              <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-0 left-1/4 animate-ping" style={{ animationDelay: "0.5s" }}>
-                  <svg width="80" height="80" viewBox="0 0 100 100">
-                    <defs>
-                      <radialGradient id="fireworkGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-                        <stop offset="0%" stopColor="#FF5252" />
-                        <stop offset="70%" stopColor="#FF9800" />
-                        <stop offset="100%" stopOpacity="0" stopColor="#FFFFFF" />
-                      </radialGradient>
-                    </defs>
-                    <circle cx="50" cy="50" r="40" fill="url(#fireworkGradient)" />
-                    {[...Array(12)].map((_, i) => (
-                      <line
-                        key={i}
-                        x1={50}
-                        y1={50}
-                        x2={50 + 40 * Math.cos((i * Math.PI) / 6)}
-                        y2={50 + 40 * Math.sin((i * Math.PI) / 6)}
-                        stroke="#FF5252"
-                        strokeWidth="2"
-                        strokeOpacity="0.7"
-                      />
-                    ))}
-                  </svg>
+{showDelicious && (
+  <div className="flex justify-center mb-4">
+    <p className="text-3xl font-bold text-red-500 animate-bounce">Delicious!</p>
+  </div>
+)}
+<p className="text-center mb-6">Your dish is ready to serve!</p>
+
+{/* Illustrated Ready Dish */}
+<div className="flex justify-center mb-6">
+  <svg width="120" height="100" viewBox="0 0 120 100" className="animate-pulse">
+    {/* Plate */}
+    <ellipse cx="60" cy="85" rx="50" ry="10" fill="#E0E0E0" />
+    
+    {/* Food content */}
+    <path d="M30,75 Q60,25 90,75" fill="#8BC34A" opacity="0.8" />
+    
+    {/* Carrot pieces */}
+    <circle cx="40" cy="65" r="5" fill="#FF9800" />
+    <circle cx="60" cy="60" r="4" fill="#FF9800" />
+    <circle cx="80" cy="65" r="5" fill="#FF9800" />
+    
+    {/* Peas */}
+    <circle cx="45" cy="70" r="2" fill="#4CAF50" />
+    <circle cx="55" cy="75" r="2" fill="#4CAF50" />
+    <circle cx="75" cy="70" r="2" fill="#4CAF50" />
+    
+    {/* Steam */}
+    <path d="M30,55 Q35,45 40,55" fill="none" stroke="white" strokeWidth="1" opacity="0.6">
+      <animate attributeName="d" values="M30,55 Q35,45 40,55; M30,55 Q35,35 40,55; M30,55 Q35,45 40,55" dur="2s" repeatCount="indefinite" />
+    </path>
+    <path d="M50,50 Q55,40 60,50" fill="none" stroke="white" strokeWidth="1" opacity="0.6">
+      <animate attributeName="d" values="M50,50 Q55,40 60,50; M50,50 Q55,30 60,50; M50,50 Q55,40 60,50" dur="1.5s" repeatCount="indefinite" />
+    </path>
+    <path d="M70,55 Q75,45 80,55" fill="none" stroke="white" strokeWidth="1" opacity="0.6">
+      <animate attributeName="d" values="M70,55 Q75,45 80,55; M70,55 Q75,35 80,55; M70,55 Q75,45 80,55" dur="1.8s" repeatCount="indefinite" />
+    </path>
+  </svg>
+</div>
+
+{/* Continue Button */}
+<div className="flex justify-center space-x-4">
+  <button
+    onClick={() => {
+      setShowCompletionPopup(false);
+      setShowDelicious(false);
+      setShowFireworks(false);
+    }}
+    className="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded-lg font-bold transition-colors"
+  >
+    Continue Cooking
+  </button>
+</div>
+
+{/* Fireworks */}
+{showFireworks && (
+  <div className="absolute inset-0 pointer-events-none">
+    {/* Firework 1 - Large */}
+    <div className="absolute top-1/4 left-1/4 animate-ping" style={{ animationDelay: "0.5s" }}>
+      <svg width="120" height="120" viewBox="0 0 100 100">
+        <defs>
+          <radialGradient id="fireworkGradient1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+            <stop offset="0%" stopColor="#FF5252" />
+            <stop offset="70%" stopColor="#FF9800" />
+            <stop offset="100%" stopOpacity="0" stopColor="#FFFFFF" />
+          </radialGradient>
+        </defs>
+        <circle cx="50" cy="50" r="30" fill="url(#fireworkGradient1)" className="animate-pulse" />
+        {[...Array(12)].map((_, i) => (
+          <line
+            key={i}
+            x1={50}
+            y1={50}
+            x2={50 + 30 * Math.cos((i * Math.PI) / 6)}
+            y2={50 + 30 * Math.sin((i * Math.PI) / 6)}
+            stroke="#FF5252"
+            strokeWidth="2"
+            strokeOpacity="0.7"
+            className="animate-ping"
+            style={{ animationDelay: `${i * 0.1}s` }}
+          />
+        ))}
+      </svg>
+    </div>
+
+    {/* Firework 2 - Medium */}
+    <div className="absolute top-1/3 right-1/4 animate-ping" style={{ animationDelay: "0.8s" }}>
+      <svg width="100" height="100" viewBox="0 0 100 100">
+        <defs>
+          <radialGradient id="fireworkGradient2" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+            <stop offset="0%" stopColor="#4CAF50" />
+            <stop offset="70%" stopColor="#8BC34A" />
+            <stop offset="100%" stopOpacity="0" stopColor="#FFFFFF" />
+          </radialGradient>
+        </defs>
+        <circle cx="50" cy="50" r="25" fill="url(#fireworkGradient2)" className="animate-pulse" style={{ animationDuration: "1.5s" }} />
+        {[...Array(10)].map((_, i) => (
+          <line
+            key={i}
+            x1={50}
+            y1={50}
+            x2={50 + 25 * Math.cos((i * Math.PI) / 5)}
+            y2={50 + 25 * Math.sin((i * Math.PI) / 5)}
+            stroke="#4CAF50"
+            strokeWidth="1.5"
+            strokeOpacity="0.8"
+            className="animate-ping"
+            style={{ animationDelay: `${i * 0.15}s` }}
+          />
+        ))}
+      </svg>
+    </div>
+
+    {/* Firework 3 - Small */}
+    <div className="absolute bottom-1/4 left-1/3 animate-ping" style={{ animationDelay: "1.2s" }}>
+      <svg width="80" height="80" viewBox="0 0 100 100">
+        <defs>
+          <radialGradient id="fireworkGradient3" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+            <stop offset="0%" stopColor="#9C27B0" />
+            <stop offset="70%" stopColor="#E040FB" />
+            <stop offset="100%" stopOpacity="0" stopColor="#FFFFFF" />
+          </radialGradient>
+        </defs>
+        <circle cx="50" cy="50" r="20" fill="url(#fireworkGradient3)" className="animate-pulse" style={{ animationDuration: "2s" }} />
+        {[...Array(8)].map((_, i) => (
+          <line
+            key={i}
+            x1={50}
+            y1={50}
+            x2={50 + 20 * Math.cos((i * Math.PI) / 4)}
+            y2={50 + 20 * Math.sin((i * Math.PI) / 4)}
+            stroke="#9C27B0"
+            strokeWidth="1.5"
+            strokeOpacity="0.8"
+            className="animate-ping"
+            style={{ animationDelay: `${i * 0.2}s` }}
+          />
+        ))}
+      </svg>
+    </div>
+
+    {/* Firework 4 - Tiny */}
+    <div className="absolute bottom-1/3 right-1/3 animate-ping" style={{ animationDelay: "1.5s" }}>
+      <svg width="60" height="60" viewBox="0 0 100 100">
+        <defs>
+          <radialGradient id="fireworkGradient4" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+            <stop offset="0%" stopColor="#FFC107" />
+            <stop offset="70%" stopColor="#FFEB3B" />
+            <stop offset="100%" stopOpacity="0" stopColor="#FFFFFF" />
+          </radialGradient>
+        </defs>
+        <circle cx="50" cy="50" r="15" fill="url(#fireworkGradient4)" className="animate-pulse" style={{ animationDuration: "1.8s" }} />
+        {[...Array(6)].map((_, i) => (
+          <line
+            key={i}
+            x1={50}
+            y1={50}
+            x2={50 + 15 * Math.cos((i * Math.PI) / 3)}
+            y2={50 + 15 * Math.sin((i * Math.PI) / 3)}
+            stroke="#FFC107"
+            strokeWidth="1"
+            strokeOpacity="0.8"
+            className="animate-ping"
+            style={{ animationDelay: `${i * 0.25}s` }}
+          />
+        ))}
+      </svg>
+    </div>
+
+    {/* Firework 5 - Extra Large */}
+    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-ping" style={{ animationDelay: "0.2s" }}>
+      <svg width="150" height="150" viewBox="0 0 100 100">
+        <defs>
+          <radialGradient id="fireworkGradient5" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+            <stop offset="0%" stopColor="#2196F3" />
+            <stop offset="70%" stopColor="#03A9F4" />
+            <stop offset="100%" stopOpacity="0" stopColor="#FFFFFF" />
+          </radialGradient>
+        </defs>
+        <circle cx="50" cy="50" r="35" fill="url(#fireworkGradient5)" className="animate-pulse" style={{ animationDuration: "2.5s" }} />
+        {[...Array(16)].map((_, i) => (
+          <line
+            key={i}
+            x1={50}
+            y1={50}
+            x2={50 + 35 * Math.cos((i * Math.PI) / 8)}
+            y2={50 + 35 * Math.sin((i * Math.PI) / 8)}
+            stroke="#2196F3"
+            strokeWidth="2.5"
+            strokeOpacity="0.8"
+            className="animate-ping"
+            style={{ animationDelay: `${i * 0.08}s` }}
+          />
+        ))}
+      </svg>
+    </div>
+    
+    {/* Firework 2 */}
+    <div className="absolute top-1/3 right-1/4 animate-ping" style={{ animationDelay: "0.8s" }}>
+      <svg width="80" height="80" viewBox="0 0 80 80">
+        <defs>
+          <radialGradient id="fireworkGradient2" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+            <stop offset="0%" stopColor="#FFEB3B" />
+            <stop offset="70%" stopColor="#FF9800" />
+            <stop offset="100%" stopOpacity="0" stopColor="#FFFFFF" />
+          </radialGradient>
+        </defs>
+        <circle cx="40" cy="40" r="25" fill="url(#fireworkGradient2)" className="animate-pulse" style={{ animationDuration: "1.5s" }} />
+        {[...Array(8)].map((_, i) => (
+          <line
+            key={i}
+            x1={40}
+            y1={40}
+            x2={40 + 25 * Math.cos((i * Math.PI) / 4)}
+            y2={40 + 25 * Math.sin((i * Math.PI) / 4)}
+            stroke="#FFEB3B"
+            strokeWidth="1.5"
+            strokeOpacity="0.8"
+            className="animate-ping"
+            style={{ animationDelay: `${i * 0.15}s` }}
+          />
+        ))}
+      </svg>
+    </div>
+    
+    {/* Firework 3 */}
+    <div className="absolute bottom-1/4 right-1/3 animate-ping" style={{ animationDelay: "1.2s" }}>
+      <svg width="90" height="90" viewBox="0 0 90 90">
+        <defs>
+          <radialGradient id="fireworkGradient3" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+            <stop offset="0%" stopColor="#4CAF50" />
+            <stop offset="70%" stopColor="#8BC34A" />
+            <stop offset="100%" stopOpacity="0" stopColor="#FFFFFF" />
+          </radialGradient>
+        </defs>
+        <circle cx="45" cy="45" r="28" fill="url(#fireworkGradient3)" className="animate-pulse" style={{ animationDuration: "2s" }} />
+        {[...Array(10)].map((_, i) => (
+          <line
+            key={i}
+            x1={45}
+            y1={45}
+            x2={45 + 28 * Math.cos((i * Math.PI) / 5)}
+            y2={45 + 28 * Math.sin((i * Math.PI) / 5)}
+            stroke="#4CAF50"
+            strokeWidth="1.5"
+            strokeOpacity="0.8"
+            className="animate-ping"
+            style={{ animationDelay: `${i * 0.2}s` }}
+          />
+        ))}
+      </svg>
                 </div>
               </div>
             )}

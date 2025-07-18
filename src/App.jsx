@@ -105,14 +105,14 @@ function App() {
           {step === 'ingredients' && (
             <>
               {/* Ingredients Header & Back Button */}
-              <div className="mb-6 flex justify-between items-center">
+              <div className="mb-0 flex justify-between items-center">
                 <button
                   onClick={goBack}
-                  className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors flex items-center"
+                  className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors flex items-center ml-80"
                 >
                   ← Back to Categories
                 </button>
-                <h2 className="text-2xl font-bold">
+                <h2 className=" - text-2xl font-bold">
                   {selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1)} Ingredients
                 </h2>
               </div>

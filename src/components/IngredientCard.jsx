@@ -9,10 +9,10 @@ const IngredientCard = ({ ingredient, onSelect }) => {
       <img 
         src={ingredient.image} 
         alt={ingredient.name} 
-        className="w-full h-40 object-cover"
+        className="w-full h-20 object-contain" //rounded
       />
-      <div className="p-4">
-        <h3 className="font-semibold text-lg">{ingredient.name}</h3>
+      <div className="p-2">
+        <h3 className="font-bold text-sm">{ingredient.name}</h3>
         <p className="text-gray-600 text-sm">
           {ingredient.category.charAt(0).toUpperCase() + ingredient.category.slice(1)}
         </p>

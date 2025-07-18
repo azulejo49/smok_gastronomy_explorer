@@ -447,11 +447,16 @@ the ingredients are synchronized whenever the prop updates, so ingredients will 
 }`}(DONE).
 --enhenced chef-(DONE)
 --enhenced flame-(DONE)
--disable clear+back butt.when start.cook-(DONE)
---truffle icon location to left,up -
+--decrease size of cook.inst-cont.- (DONE)
+--decrease ingred.card. size-(DONE)
+seeds,etc-ingred.txt-to center-yellow-(DONE)
+--added legumes-Category-(DONE)
+--enhance fire.w.+chef(pop-up)- (DONE)
+--added grains-
+--veg illus. in pot- (DONE)
+--categ.+ingre.buttn- center-(DONE)
+--truffle icon location to left,up -?
 --progress bar disable when pressing "finish.cook"-the percentage-should -remain-
 --coloured percentage-
 --img implement.-player
---enhance fire.w.-
---decrease size of cook.inst-cont.- (DONE)
---categ.+ingre.butt- center
+--ingred.txt- up.right-change colour+center-

@@ -544,7 +544,7 @@ Capacitor - Package your web app as a native container
 NativeScript - Another framework for native mobile development
 ----------------
 Building Android APK with Capacitor
-Yes, you'll need to follow a two-step process:
+ follow a two-step process:
 
 Build your web app (the same npm run build process we discussed)
 Package it for Android using Capacitor
