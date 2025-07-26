@@ -452,7 +452,7 @@ the ingredients are synchronized whenever the prop updates, so ingredients will 
 seeds,etc-ingred.txt-to center-yellow-(DONE)
 --added legumes-Category-(DONE)
 --enhance fire.w.+chef(pop-up)- (DONE)
---added grains-
+--added grains,nuts,legumes-(DONE)
 --veg illus. in pot- (DONE)
 --categ.+ingre.buttn- center-(DONE)
 --truffle icon location to left,up -?
