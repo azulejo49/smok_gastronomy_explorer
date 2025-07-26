@@ -27,3 +27,5 @@ dist/
 build/
 .DS_Store
 *.log
+# Ignore build output
+/dist

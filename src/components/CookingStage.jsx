@@ -58,7 +58,7 @@ const CookingStage = ({ selectedIngredients, onBack, onClearIngredients }) => {
     if (localIngredients.length > 0 && !isCookingFinished && cookingStep < 3) {
       const timer = setInterval(() => {
         setCookingStep((prev) => (prev >= 3 ? prev : prev + 1));
-      }, 14500);
+      }, 18500);
       return () => clearInterval(timer);
     }
   }, [localIngredients, cookingStep, isCookingFinished]);

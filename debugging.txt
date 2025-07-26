@@ -440,6 +440,20 @@ Pass an empty array to CookingStage via selectedIngredients.
 Inside useEffect in CookingStage,
 the ingredients are synchronized whenever the prop updates, so ingredients will reset accordingly.
 -----------------------------------------------------
+"URI malformed"
+Caching of your assets or service worker, causing stale or incorrect files to load.
+Incorrect URLs or paths used in your code or service worker configuration.
+Problems with the service worker registration or cache management that prevent the app from loading correctly on subsequent loads.
+Troubleshooting steps:
+1. Clear Cache and Service Worker Data
+When you update your app or service worker, browsers may cache assets aggressively.
+To troubleshoot:
+Open Chrome DevTools (F12 or Ctrl+Shift+I)
+Go to Application tab
+Under Clear Storage, click Clear site data
+Also, unregister existing service workers:
+In Application > Service Workers, click Unregister.
+
 ----------------------------------------
 ---TBD--position of icons-to the left+chef to the right+reset data when switching players+no ingred.txt red+,player name when playing-colour+size+DISABLE buttn.while cooking except fin.cook..(DONE).
 --cursor not allowed -for butt. back%clear(cooking stage)-Modified Button Styling - className={`... ${
@@ -460,3 +474,6 @@ seeds,etc-ingred.txt-to center-yellow-(DONE)
 --coloured percentage-
 --img implement.-player
 --ingred.txt- up.right-change colour+center-
+
+--------------------------------
+

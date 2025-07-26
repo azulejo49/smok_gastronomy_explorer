@@ -1,4 +1,5 @@
 SMOK GASTRONOMY EXPLORER - COMPONENT DOCUMENTATION
+npm run dev
 ===================================================
 tbd------reset data when switching players,cooking animation instead of chef.
 Image Handling in Vite
@@ -392,7 +393,21 @@ Slightly more setup steps
 2. How PWAs Work (Progressive Web Apps)
 What is a PWA?
 A Progressive Web App is a web application that uses modern web technologies to deliver an app-like experience on browsers. It can work offline, be added to the device's home screen, and load quickly.
+------------------------------------------
+Summary Table:
+Service	Best for	Free Tier Highlights	Limitations
+Vercel	Static, Next.js, frontend	Easy deployment, serverless functions	Bandwidth & build limits
+Netlify	Static sites, JAMstack	CI/CD, serverless functions	Bandwidth limits
+GitHub Pages	Static sites	Free, custom domains, HTTPS	Static only
+Firebase Hosting	Static/dynamic apps	CDN, SSL, easy setup	Bandwidth/storage limits
+Render	Static & backend apps	Free static, backend support	Sleep policies, bandwidth limits
+Surge	Static sites	Simple CLI deployment	Static only
+Replit	Full-stack apps, prototyping	Online IDE, hosting	Resource limits, uptime restrictions
+Recommendation:
+For frontend static sites or React apps: Vercel, Netlify, or GitHub Pages.
+For full-stack or backend apps with serverless functions: Render, Firebase, or Vercel.
 
+----------------------------
 Key technologies in a PWA:
 Manifest file (manifest.json): Defines how the app appears on the device (icons, name, start URL).
 Service Worker (service-worker.js): Scripts that run in the background, intercept network requests, and cache assets for offline use.
@@ -433,8 +448,30 @@ Test your app offline by disabling network or using browser dev tools.
 5. Build and Deploy
 Run npm run build or yarn build.
 Deploy the contents of the build/ folder to your hosting platform (e.g., GitHub Pages, Netlify, etc.).
+npm install -g serve//test locally
+serve -s dist//npx serve -s dist
+npm run dev -- --host
 6. Test your PWA
 Use Chrome DevTools → Application tab → Check "Offline" mode.
+Go to the Application Tab:
+
+In DevTools, click on the "Application" tab.
+If you don't see it, click on the >> icon to find it or enable it via the More tools menu.
+Check the Service Worker:
+
+In the left sidebar, under "Application", select "Service Workers".
+Ensure your service worker is registered and active.
+Simulate Offline Mode:
+
+In the "Application" tab, locate the "Offline" checkbox in the Network section (or via the "Network Conditions" tab).
+Alternatively, open the "Network" tab.
+Check the "Offline" box to simulate offline mode.
+Test your app:
+
+Refresh your page (F5 or Ctrl+R).
+Verify that your app loads the cached content and functions as expected.
+Test navigation, images, and other assets to ensure they are served from cache.
+
 Use "Add to Homescreen" on mobile devices.
 Verify the app works offline.
 Summary
