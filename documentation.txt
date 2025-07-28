@@ -449,8 +449,17 @@ Test your app offline by disabling network or using browser dev tools.
 Run npm run build or yarn build.
 Deploy the contents of the build/ folder to your hosting platform (e.g., GitHub Pages, Netlify, etc.).
 npm install -g serve//test locally
-serve -s dist//npx serve -s dist
+
+serve -s dist//npx serve -s dist---- run-(preview) serve -s dist from the smok_gastronomy_explorer directory
+ Always run the serve command from the project root (or the directory containing dist)
+ 
 npm run dev -- --host
+Service workers require HTTPS or localhost:
+Browsers enforce that service workers only work on localhost, or over HTTPS in production.
+When you're running on your network IP (e.g., 192.168.176.123:5173), it may not be treated as a secure context, which prevents registration.
+
+
+
 6. Test your PWA
 Use Chrome DevTools → Application tab → Check "Offline" mode.
 Go to the Application Tab:
@@ -482,3 +491,58 @@ Step	Action	Details
 4	Cache assets	Cache static files in your service worker
 5	Build & deploy	Use npm run build, deploy build/ folder
 6	Test offline & install	Use Chrome DevTools & device features
+--------------------------------
+Why place CSS and JSX in public/ instead of src/?
+In modern React projects (like Create React App, Vite, Webpack):
+src/ folder:
+
+Contains source code — React components (.jsx or .js), CSS modules, JavaScript logic.
+Files here are processed/bundled by the build tool (Webpack, Vite).
+They are not directly accessible via URL; instead, they are bundled into a single or multiple optimized files.
+public/ folder:
+
+Contains static assets — images, favicon, index.html, and other files you want to serve as-is.
+Files here are copied directly to the build output (build/ or dist/) without processing.
+You can reference files in public/ directly via absolute URLs (e.g., /index.css, /images/logo.png).
+-----------------------------------------------
+CRA-reactApp
+-npm run start
+npm run build
+npm install --save gh-pages
+-----------Commit and push everything to GitHub---
+git add .
+git commit -m "Setup GitHub Pages deployment"
+git push origin main
+
+
+gh-pages -d build
+npm run deploy
+------------------
+test after build
+cd build- npm install -g serve
+serve -s build
+----------------------------------
+✅ 2. Set Up HashRouter for GitHub Pages
+GitHub Pages only supports static file hosting. It does not support client-side routing (like /about, /game, etc.) by default.
+
+🔧 Fix: Use HashRouter instead of BrowserRouter
+📁 In src/main.jsx or src/index.jsx:
+Replace:import { BrowserRouter } from 'react-router-dom';
+
+<BrowserRouter>
+  <App />
+</BrowserRouter>
+With:
+import { HashRouter } from 'react-router-dom';
+
+<HashRouter>
+  <App />
+</HashRouter>
+This changes URLs to use hash fragments: /#/route
+Works perfectly with GitHub Page---------------
+-------------------------
+Best practices:
+For local development, you can keep "homepage": "/".
+For production or hosting on GitHub Pages, set "homepage" to the repository name or subdirectory.
+Example:"homepage": "https://azulejo49.github.io/smok_gastronomy_explorer"
+"homepage": "/smok_gastronomy_explorer"

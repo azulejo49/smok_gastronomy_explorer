@@ -11,7 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
-
+build
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -28,4 +28,4 @@ build/
 .DS_Store
 *.log
 # Ignore build output
-/dist
+/build

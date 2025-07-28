@@ -1,3 +1,4 @@
+// src/App.jsx
 import React, { useState, useEffect } from 'react';
 import ingredients from './data/ingredients'; // ensure this exists
 import IngredientCard from './components/IngredientCard';
@@ -12,7 +13,9 @@ function App() {
   const [selectedPlayer, setSelectedPlayer] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedIngredients, setSelectedIngredients] = useState([]);
-  
+
+  const kitchenImage = '/images/kitchen1.jpg'; // Path in public folder
+
   // Disable scrolling on mount and restore on unmount
   useEffect(() => {
     document.body.style.overflow = 'hidden'; // disable scroll
@@ -21,70 +24,70 @@ function App() {
     };
   }, []);
 
-  // Function to reset all user-specific data
   const resetUserData = () => {
-    setSelectedCategory(null);               // Reset selected category
-    setSelectedIngredients([]);              // Clear selected ingredients
-    setHasCooked(false);                     // Reset cooking completion
-    // Add any other user-specific states here if needed
+    setSelectedCategory(null);
+    setSelectedIngredients([]);
+    setHasCooked(false);
   };
 
-  // Handle player selection, reset data before setting new player
   const handleSelectPlayer = (player) => {
-    resetUserData(); // Reset previous data on player change
-    setSelectedPlayer(player); // Set new player
-    setStep('category'); // Move to category selection
+    resetUserData();
+    setSelectedPlayer(player);
+    setStep('category');
   };
 
-  // Handle category selection
   const handleSelectCategory = (category) => {
     setSelectedCategory(category);
     setStep('ingredients');
   };
 
-  // Handle ingredient selection
   const handleSelectIngredient = (ingredient) => {
     setSelectedIngredients(prev => {
-      // Avoid duplicates
       if (prev.find(i => i.id === ingredient.id)) return prev;
       return [...prev, ingredient];
     });
   };
 
-  // Start cooking
   const startCooking = () => {
     setStep('cooking');
     setHasCooked(false);
   };
-  
 
-  // Go back to previous step
   const goBack = () => {
     if (step === 'category') setStep('player');
-    if (step === 'ingredients') setStep('category');
+    else if (step === 'ingredients') setStep('category');
   };
 
-  // Filter ingredients based on selected category
   const filteredIngredients = selectedCategory
     ? ingredients.filter(i => i.category === selectedCategory)
     : ingredients;
 
-  // Clear selected ingredients
   const handleClearIngredients = () => {
     setSelectedIngredients([]);
   };
 
   return (
-    <div className="w-screen h-screen">
-      {/* Main container with fixed height */}
+     <div
+      className="min-h-screen flex flex-col"
+      style={{
+        backgroundImage: 'url("/images/kitchen1.jpg")', // Keep absolute path
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        height: '100vh',
+        width: '100%',
+      }}
+    >
+      {/* Main layout */}
       <div className="min-h-screen flex flex-col" style={{ height: '100vh' }}>
         {/* Header */}
-        <header className="bg-gradient-to-br from-green-600 via-green-500 to-blue-500 text-white p-4 shadow-md flex-shrink-0">
-          <h1 className="text-3xl font-bold text-center">Smok Gastronomy Explorer</h1>
+        <header className="app-header text-white flex justify-center items-center flex-col">
+          <h1 className="text-3xl font-bold text-center mb-2">Smok Gastronomy Explorer</h1>
           {selectedPlayer && (
-            <div className="text-center mt-2">
-              
-              <span className="font-bold text-purple-900">PLAYER: {selectedPlayer.name}</span>
+            <div className="text-center">
+              <span className="font-bold text-purple-900">
+                PLAYER: {selectedPlayer.name}
+              </span>
             </div>
           )}
         </header>
@@ -104,21 +107,19 @@ function App() {
 
           {step === 'ingredients' && (
             <>
-              {/* Ingredients Header & Back Button */}
-              <div className="mb-0 flex justify-between items-center">
+              {/* Header & Back Button */}
+              <div className="mb-4 flex justify-between items-center">
                 <button
                   onClick={goBack}
-                  className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors flex items-center ml-80"
+                  className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors flex items-center"
                 >
                   ← Back to Categories
                 </button>
-                <h2 className=" - text-2xl font-bold">
-                  {selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1)} Ingredients
-                </h2>
+                <h2 className="text-2xl font-bold capitalize">{selectedCategory} Ingredients</h2>
               </div>
 
-              {/* Ingredient Cards Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {/* Ingredients Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-4">
                 {filteredIngredients.map((ing) => (
                   <IngredientCard
                     key={ing.id}

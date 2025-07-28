@@ -1,5 +1,4 @@
 /* src/index.css */
-/* stylelint-disable-next-line */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -12,20 +11,22 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-   background-color: #2a5877; 
+  background-color: #2a5877;
   padding: 0;
   min-height: 100vh;
 }
 
-/* Fix for vite dev client */
+/* Fixes for Vite dev overlays (if you use Vite) */
 .vite-dev-client {
   display: none !important;
 }
-/* Fix for vite error overlay */
+
 .vite-error-overlay {
   display: none !important;
 }
-/*  return button */
+
+/* Styles for UI components */
+
 .return-button {
   display: inline-flex;
   align-items: center;
@@ -35,11 +36,7 @@ body {
   color: #374151;
   border-radius: 0.375rem;
   font-weight: 500;
-  transition-colors: background-color 0.2s, color 0.2s;
-}
-/* Fix for cooking stage */
-.cooking-stage-container {
-  min-height: 300px;
+  transition: background-color 0.2s, color 0.2s;
 }
 .return-button:hover {
   background-color: #d1d5db;
@@ -49,27 +46,39 @@ body {
   outline: 2px solid #4f46e5;
   outline-offset: 2px;
 }
-/* Additional styles for better UI */
+
+/*.cooking-background {
+  background-image: url('/images/kitchen1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Additional styles for UI */
+
 .player-card {
   transition: transform 0.2s ease-in-out;
 }
 .player-card:hover {
   transform: translateY(-5px);
 }
+
 .category-btn {
   transition: all 0.2s ease;
 }
 .category-btn:hover {
   transform: scale(1.05);
 }
+
 .ingredient-card {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .ingredient-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+              0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
-/* Fix for navigation arrows */
+
 .back-arrow {
   color: #3b82f6;
   text-decoration: none;
@@ -82,27 +91,27 @@ body {
   color: #2563eb;
   text-decoration: underline;
 }
-/* Main container padding */
+
 .main-container {
   padding: 1rem;
 }
-/* Header styles */
+
 .app-header {
   padding: 1rem;
   background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+              0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
-/* Responsive adjustments */
+
 @media (max-width: 640px) {
   .grid-cols-1 {
     grid-template-columns: 1fr;
   }
-  
   .lg\:grid-cols-4 {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
 }
-/* Animation for transitions */
+
 .fade-in {
   animation: fadeIn 0.5s ease-in;
 }
@@ -116,32 +125,3 @@ body {
     transform: translateY(0);
   }
 }
-
-/* index.css */
-
-.cooking-background {
- background-image: url('/images/kitchen1.jpg');
-  /* Optional: you can add other background properties if needed */
-  background-size: cover; /* makes the image cover the element */
-  background-position: center; /* centers the image */
-  background-repeat: no-repeat; /* prevents tiling */
-}  
-
-
-
-
-
-  /*  linear-gradient(
-      rgba(112, 141, 165, 0.4), 
-      rgba(130, 166, 192, 0.4)
-    ),
-    linear-gradient(
-      to bottom, 
-      rgba(139, 205, 249, 0.6), 
-      rgba(86, 143, 182, 0.6)
-    );
-  background-color: #af9aaf;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}   */

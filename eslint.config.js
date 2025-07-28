@@ -21,6 +21,11 @@ export default defineConfig([
         ecmaFeatures: { jsx: true },
         sourceType: 'module',
       },
+      // Add worker environment here
+      env: {
+        browser: true,
+        worker: true, // <-- Enable worker globals
+      },
     },
     rules: {
       'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],

@@ -1,11 +1,7 @@
 {
   "name": "Smok Gastronomy Explorer",
-  "short_name": "GastroExplorer",
-  "start_url": ".",
-  "display": "standalone",
-  "background_color": "#f0f2f5",
+  "short_name": "Smok Explorer",
   "theme_color": "#4CAF50",
-  "orientation": "portrait",
   "icons": [
     {
       "src": "/icons/icon-192.png",
