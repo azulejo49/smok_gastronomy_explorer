@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "https://azulejo49.github.io/smok_gastronomy_explorer/static/css/main.f1d459d8.css",
-    "main.js": "https://azulejo49.github.io/smok_gastronomy_explorer/static/js/main.2dd9c6f7.js",
-    "index.html": "https://azulejo49.github.io/smok_gastronomy_explorer/index.html",
-    "main.f1d459d8.css.map": "https://azulejo49.github.io/smok_gastronomy_explorer/static/css/main.f1d459d8.css.map",
-    "main.2dd9c6f7.js.map": "https://azulejo49.github.io/smok_gastronomy_explorer/static/js/main.2dd9c6f7.js.map"
+    "main.css": "/smok_gastronomy_explorer/static/css/main.f1d459d8.css",
+    "main.js": "/smok_gastronomy_explorer/static/js/main.2dd9c6f7.js",
+    "index.html": "/smok_gastronomy_explorer/index.html",
+    "main.f1d459d8.css.map": "/smok_gastronomy_explorer/static/css/main.f1d459d8.css.map",
+    "main.2dd9c6f7.js.map": "/smok_gastronomy_explorer/static/js/main.2dd9c6f7.js.map"
   },
   "entrypoints": [
-    "https://azulejo49.github.io/smok_gastronomy_explorer/static/css/main.f1d459d8.css",
-    "https://azulejo49.github.io/smok_gastronomy_explorer/static/js/main.2dd9c6f7.js"
+    "static/css/main.f1d459d8.css",
+    "static/js/main.2dd9c6f7.js"
   ]
 }
