@@ -1,52 +1,44 @@
-<!--public/index.html -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Smok Gastronomy Explorer</title>
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="vite.svg" />
 
-  <!-- Main stylesheet -->
-  <link rel="stylesheet" href="/index.css" />
-
-  <!-- Manifest  -->
-  <link rel="manifest" href="manifest.json" />
-
-  <!-- Theme color -->
+  <!-- Use PUBLIC_URL for deploy compatibility    previously- https://azulejo49.github.io/smok_gastronomy_explorer/static/css/main.css          -->
+  <!--<link rel="stylesheet" href="%PUBLIC_URL%/static/css/main.css" />-->
+ <!-- PWA manifest -->
+<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+<!-- Favicon: use one main icon -->
+<link rel="icon" type="image/png" sizes="512x512" href="%PUBLIC_URL%/icons/icon-512.png" />
   <meta name="theme-color" content="#4CAF50" />
-
-  <!-- Your main JS module -->
- <!--  <script type="module" crossorigin src="/index.js"></script>-->
-
-  <!-- Register Service Worker (if needed) 
-  <script id="vite-plugin-pwa:register-sw" src="/public/sw.js"></script>-->
+ <!-- <script defer src="%PUBLIC_URL%/static/js/main.js"></script>-->
 </head>
 <body>
   <div id="root"></div>
 
-  <!-- Include all images with correct paths -->
-  <img src="/images/oricar_.jpg" alt="Oricar" />
-  <img src="/images/smok.jpg" alt="Smok" />
-  <img src="/images/amiramcar_.jpg" alt="Amiramcar" />
-  <img src="/images/hilacar_.jpg" alt="Hilacar" />
-  <img src="/images/lavicar_.jpg" alt="Lavicar" />
-  <img src="/images/marley.jpg" alt="Marley" />
-  <img src="/images/shcar.jpg" alt="Shcar" />
-  <img src="/images/blacktruff1.jpg" alt="Black Truff" />
-  <img src="/images/whitetruff2.jpg" alt="White Truff 2" />
-  <img src="/images/kitchen1.jpg" alt="Kitchen" />
-  <img src="/images/placeholder.jpg" alt="Placeholder" />
-<!-- 
+  <!-- Images with correct paths               previously- https://azulejo49.github.io/smok_gastronomy_explorer/images/*.jpg -->
+  <img src="%PUBLIC_URL%/images/oricar_.jpg" alt="Oricar" />
+  <img src="%PUBLIC_URL%/images/smok.jpg" alt="Smok" />
+  <img src="%PUBLIC_URL%/images/amiramcar_.jpg" alt="Amiramcar" />
+  <img src="%PUBLIC_URL%/images/hilacar_.jpg" alt="Hilacar" />
+  <img src="%PUBLIC_URL%/images/lavicar_.jpg" alt="Lavicar" />
+  <img src="%PUBLIC_URL%/images/marley.jpg" alt="Marley" />
+  <img src="%PUBLIC_URL%/images/shcar.jpg" alt="Shcar" />
+  <img src="%PUBLIC_URL%/images/blacktruff1.jpg" alt="Black Truff" />
+  <img src="%PUBLIC_URL%/images/whitetruff2.jpg" alt="White Truff 2" />
+  <img src="%PUBLIC_URL%/images/kitchen1.jpg" alt="Kitchen" />
+  <img src="%PUBLIC_URL%/images/placeholder.jpg" alt="Placeholder" />
+
+  <!-- Optional service worker (disabled) -->
+  <!--
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js')
+      navigator.serviceWorker.register('%PUBLIC_URL%/sw.js')
         .then(reg => console.log('Service Worker registered:', reg))
         .catch(error => console.log('Service Worker registration failed:', error));
     }
-  </script>-->
+  </script>
+  -->
 </body>
 </html>

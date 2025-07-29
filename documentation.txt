@@ -450,7 +450,7 @@ Run npm run build or yarn build.
 Deploy the contents of the build/ folder to your hosting platform (e.g., GitHub Pages, Netlify, etc.).
 npm install -g serve//test locally
 
-serve -s dist//npx serve -s dist---- run-(preview) serve -s dist from the smok_gastronomy_explorer directory
+serve -s dist//npx serve -s dist/build---- run-(preview) serve -s dist from the smok_gastronomy_explorer directory
  Always run the serve command from the project root (or the directory containing dist)
  
 npm run dev -- --host

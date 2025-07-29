@@ -5,7 +5,7 @@ import IngredientCard from './components/IngredientCard';
 import CookingStage from './components/CookingStage';
 import PlayerSelection from './components/PlayerSelection';
 import CategorySelection from './components/CategorySelection';
-
+import { publicUrl } from './utils/path';
 function App() {
   // State variables
   const [hasCooked, setHasCooked] = useState(false);
@@ -14,8 +14,8 @@ function App() {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedIngredients, setSelectedIngredients] = useState([]);
 
-  const kitchenImage = '/images/kitchen1.jpg'; // Path in public folder
-
+  const kitchenImage = `${publicUrl}/images/kitchen1.jpg`;
+  console.log('kitchenImage →', kitchenImage);
   // Disable scrolling on mount and restore on unmount
   useEffect(() => {
     document.body.style.overflow = 'hidden'; // disable scroll
@@ -67,30 +67,48 @@ function App() {
   };
 
   return (
-     <div
-      className="min-h-screen flex flex-col"
+  <div
+    className="min-h-screen flex flex-col"
+    style={{
+      backgroundImage: `url(${kitchenImage})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      backgroundColor: 'red', // debug fallback
+      height: '100vh',
+      width: '100%',
+      border: '4px solid lime' // debug border
+    }}
+  >
+    {/* ✅ Debug Test: confirm image + visibility */}
+    <div
       style={{
-        backgroundImage: 'url("/images/kitchen1.jpg")', // Keep absolute path
+        backgroundImage: `url(${kitchenImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
+        backgroundColor: 'red',
         height: '100vh',
         width: '100%',
+        border: '4px solid lime'
       }}
     >
-      {/* Main layout */}
-      <div className="min-h-screen flex flex-col" style={{ height: '100vh' }}>
-        {/* Header */}
-        <header className="app-header text-white flex justify-center items-center flex-col">
-          <h1 className="text-3xl font-bold text-center mb-2">Smok Gastronomy Explorer</h1>
-          {selectedPlayer && (
-            <div className="text-center">
-              <span className="font-bold text-purple-900">
-                PLAYER: {selectedPlayer.name}
-              </span>
-            </div>
-          )}
-        </header>
+      <h1 style={{ color: 'white' }}>TEST</h1>
+    </div>
+
+    {/* Main layout */}
+    <div className="min-h-screen flex flex-col" style={{ height: '100vh' }}>
+      {/* Header */}
+      <header className="app-header text-white flex justify-center items-center flex-col">
+        <h1 className="text-3xl font-bold text-center mb-2">Smok Gastronomy Explorer</h1>
+        {selectedPlayer && (
+          <div className="text-center">
+            <span className="font-bold text-purple-900">
+              PLAYER: {selectedPlayer.name}
+            </span>
+          </div>
+        )}
+      </header>
 
         {/* Main Content */}
         <main className="flex-1 overflow-y-auto px-4" style={{ paddingBottom: '20px' }}>
