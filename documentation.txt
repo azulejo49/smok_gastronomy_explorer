@@ -550,7 +550,12 @@ Example:"homepage": "https://azulejo49.github.io/smok_gastronomy_explorer"
 ---------------------------------
 For Deployment (npm run build)
 ✅ Add "homepage" in package.json:
-"homepage": "https://azulejo49.github.io/smok_gastronomy_explorer"
+"homepage": "https://azulejo49.github.io/smok_gastronomy_explorer",
+src/utils/path.js--export const publicUrl =
+  process.env.NODE_ENV === 'production'
+    ? '/smok_gastronomy_explorer'
+    : '';
+    allimages refer in App.jsx
 npm run build
 gh-pages -d build
 npm run deploy

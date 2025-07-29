@@ -1,26 +1,40 @@
 // src/App.jsx
 import React, { useState, useEffect } from 'react';
-import ingredients from './data/ingredients'; // ensure this exists
+import ingredients from './data/ingredients';
 import IngredientCard from './components/IngredientCard';
 import CookingStage from './components/CookingStage';
 import PlayerSelection from './components/PlayerSelection';
 import CategorySelection from './components/CategorySelection';
 import { publicUrl } from './utils/path';
+
+const allImages = [
+  { src: 'oricar_.jpg', alt: 'Oricar' },
+  { src: 'smok.jpg', alt: 'Smok' },
+  { src: 'amiramcar_.jpg', alt: 'Amiramcar' },
+  { src: 'hilacar_.jpg', alt: 'Hilacar' },
+  { src: 'lavicar_.jpg', alt: 'Lavicar' },
+  { src: 'marley.jpg', alt: 'Marley' },
+  { src: 'shcar.jpg', alt: 'Shcar' },
+  { src: 'blacktruff1.jpg', alt: 'Black Truff' },
+  { src: 'whitetruff2.jpg', alt: 'White Truff 2' },
+  { src: 'kitchen1.jpg', alt: 'Kitchen' },
+  { src: 'placeholder.jpg', alt: 'Placeholder' },
+];
+
 function App() {
-  // State variables
   const [hasCooked, setHasCooked] = useState(false);
-  const [step, setStep] = useState('player'); // 'player', 'category', 'ingredients', 'cooking'
+  const [step, setStep] = useState('player');
   const [selectedPlayer, setSelectedPlayer] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedIngredients, setSelectedIngredients] = useState([]);
 
   const kitchenImage = `${publicUrl}/images/kitchen1.jpg`;
-  //console.log('kitchenImage →', kitchenImage);
+   //console.log('kitchenImage →', kitchenImage);
   // Disable scrolling on mount and restore on unmount
   useEffect(() => {
-    document.body.style.overflow = 'hidden'; // disable scroll
+    document.body.style.overflow = 'hidden';
     return () => {
-      document.body.style.overflow = 'auto'; // restore scroll
+      document.body.style.overflow = 'auto';
     };
   }, []);
 
@@ -42,8 +56,8 @@ function App() {
   };
 
   const handleSelectIngredient = (ingredient) => {
-    setSelectedIngredients(prev => {
-      if (prev.find(i => i.id === ingredient.id)) return prev;
+    setSelectedIngredients((prev) => {
+      if (prev.find((i) => i.id === ingredient.id)) return prev;
       return [...prev, ingredient];
     });
   };
@@ -59,7 +73,7 @@ function App() {
   };
 
   const filteredIngredients = selectedCategory
-    ? ingredients.filter(i => i.category === selectedCategory)
+    ? ingredients.filter((i) => i.category === selectedCategory)
     : ingredients;
 
   const handleClearIngredients = () => {
@@ -67,21 +81,8 @@ function App() {
   };
 
   return (
-  <div
-    className="min-h-screen flex flex-col"
-    style={{
-      backgroundImage: `url(${kitchenImage})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat',
-      backgroundColor: 'red', // debug fallback
-      height: '100vh',
-      width: '100%',
-      border: '4px solid lime' // debug border
-    }}
-  >
-    {/* ✅ Debug Test: confirm image + visibility 
     <div
+      className="min-h-screen flex flex-col"
       style={{
         backgroundImage: `url(${kitchenImage})`,
         backgroundSize: 'cover',
@@ -90,15 +91,9 @@ function App() {
         backgroundColor: 'red',
         height: '100vh',
         width: '100%',
-        border: '4px solid lime'
+        border: '4px solid lime',
       }}
     >
-      <h1 style={{ color: 'white' }}>TEST</h1>
-    </div>*/}
-
-    {/* Main layout */}
-    <div className="min-h-screen flex flex-col" style={{ height: '100vh' }}>
-      {/* Header */}
       <header className="app-header text-white flex justify-center items-center flex-col">
         <h1 className="text-3xl font-bold text-center -mb-1">Smok Gastronomy Explorer</h1>
         {selectedPlayer && (
@@ -109,65 +104,72 @@ function App() {
           </div>
         )}
       </header>
-        
-        {/* Main Content */}
-        <main className="flex-1 overflow-y-auto px-4" style={{ paddingBottom: '120px' }}>
-          {step === 'player' && (
-            <PlayerSelection onSelectPlayer={handleSelectPlayer} />
-          )}
 
-          {step === 'category' && (
-            <CategorySelection
-              onSelectCategory={handleSelectCategory}
-              onBack={() => setStep('player')}
-            />
-          )}
+      {/* Lazy-loaded image preview */}
+      <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 p-4">
+        {allImages.map(({ src, alt }) => (
+          <img
+            key={src}
+            src={`${publicUrl}/images/${src}`}
+            alt={alt}
+            loading="lazy"
+            className="rounded-xl shadow-md w-full object-cover"
+          />
+        ))}
+      </section>
 
-          {step === 'ingredients' && (
-            <>
-              {/* Header & Back Button */}
-              <div className="mb-2 flex justify-between items-center">
-                <button
-                  onClick={goBack}
-                  className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors flex items-center"
-                >
-                  ← Back to Categories
-                </button>
-                <h2 className="text-2xl font-bold capitalize">{selectedCategory} Ingredients</h2>
-              </div>
+      <main className="flex-1 overflow-y-auto px-4" style={{ paddingBottom: '120px' }}>
+        {step === 'player' && <PlayerSelection onSelectPlayer={handleSelectPlayer} />}
 
-              {/* Ingredients Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-4">
-                {filteredIngredients.map((ing) => (
-                  <IngredientCard
-                    key={ing.id}
-                    ingredient={ing}
-                    onSelect={handleSelectIngredient}
-                  />
-                ))}
-              </div>
+        {step === 'category' && (
+          <CategorySelection
+            onSelectCategory={handleSelectCategory}
+            onBack={() => setStep('player')}
+          />
+        )}
 
-              {/* Start Cooking Button */}
-              <div className="mt-2 flex justify-center">
-                <button
-                  onClick={startCooking}
-                  disabled={selectedIngredients.length === 0 || hasCooked}
-                  className="bg-yellow-500 text-white px-6 py-3 rounded-lg font-bold disabled:opacity-50 disabled:cursor-not-allowed">
-                  Start Cooking!
-                </button>
-              </div>
-            </>
-          )}
+        {step === 'ingredients' && (
+          <>
+            <div className="mb-2 flex justify-between items-center">
+              <button
+                onClick={goBack}
+                className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors flex items-center"
+              >
+                ← Back to Categories
+              </button>
+              <h2 className="text-2xl font-bold capitalize">{selectedCategory} Ingredients</h2>
+            </div>
 
-          {step === 'cooking' && (
-            <CookingStage
-              selectedIngredients={selectedIngredients}
-              onBack={() => setStep('ingredients')}
-              onClearIngredients={handleClearIngredients}
-            />
-          )}
-        </main>
-      </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-4">
+              {filteredIngredients.map((ing) => (
+                <IngredientCard
+                  key={ing.id}
+                  ingredient={ing}
+                  onSelect={handleSelectIngredient}
+                />
+              ))}
+            </div>
+
+            <div className="mt-2 flex justify-center">
+              <button
+                onClick={startCooking}
+                disabled={selectedIngredients.length === 0 || hasCooked}
+                className="bg-yellow-500 text-white px-6 py-3 rounded-lg font-bold disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                Start Cooking!
+              </button>
+            </div>
+          </>
+        )}
+
+        {step === 'cooking' && (
+          <CookingStage
+            selectedIngredients={selectedIngredients}
+            onBack={() => setStep('ingredients')}
+            onClearIngredients={handleClearIngredients}
+          />
+        )}
+      </main>
     </div>
   );
 }

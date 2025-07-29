@@ -1,3 +1,4 @@
-export const publicUrl = process.env.NODE_ENV === 'production'
-  ? process.env.PUBLIC_URL
-  : '';
+export const publicUrl =
+  process.env.NODE_ENV === 'production'
+    ? '/smok_gastronomy_explorer'
+    : '';
