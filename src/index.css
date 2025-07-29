@@ -122,13 +122,13 @@ body {
   }
 }
 
-/* Responsive images in grid, scaled down */
+/* Responsive images in grid, scaled down 
 .image-grid img {
-  width: 80%; /* smaller images to fit scene */
+  width: 80%; /* smaller images to fit scene 
   height: auto;
   object-fit: contain;
 }
-
+*/
 /* Fade-in animation */
 .fade-in {
   animation: fadeIn 0.5s ease-in;

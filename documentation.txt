@@ -547,3 +547,10 @@ For local development, you can keep "homepage": "/".
 For production or hosting on GitHub Pages, set "homepage" to the repository name or subdirectory.
 Example:"homepage": "https://azulejo49.github.io/smok_gastronomy_explorer"
 "homepage": "/smok_gastronomy_explorer"
+---------------------------------
+For Deployment (npm run build)
+✅ Add "homepage" in package.json:
+"homepage": "https://azulejo49.github.io/smok_gastronomy_explorer"
+npm run build
+gh-pages -d build
+npm run deploy
