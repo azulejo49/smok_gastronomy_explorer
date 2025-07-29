@@ -514,6 +514,7 @@ git add .
 git commit -m "Setup GitHub Pages deployment"
 git push origin main
 
+delete build-rm -rf build
 
 gh-pages -d build// npx gh-pages -d build
 npm run deploy

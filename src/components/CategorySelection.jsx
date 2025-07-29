@@ -5,18 +5,19 @@ const CategorySelection = ({ onSelectCategory, onBack }) => {
   
   return (
     <div className="flex flex-col items-center">
-      <div className="mb-9 flex justify-center w-full">
+      {/* Responsive flex container */}
+    <div className="w-full px-20 sm:px-8 md:px-16 flex flex-col sm:flex-row items-center sm:justify-between mb-9">
         {/* Back Button - Keep in position */}
         <button
           onClick={onBack}
-          className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors flex items-center ml-80"
+          className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors"
         >
           ← Back to Players
         </button>
         
         {/* Category Title - Keep in position */}
-        <div className="flex-grow flex justify-center">
-          <h2 className="bg-yellow-100 text-2xl font-bold">CHOOSE A CATEGORY</h2>
+        <div className="w-full px-20 sm:px-8 md:px-16">
+          <h2 className="text-2xl font-bold text-left w-full sm:w-auto mb-4 sm:mb-0">CHOOSE CATEGORY</h2>
         </div>
       </div>
       

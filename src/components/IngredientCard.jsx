@@ -3,13 +3,13 @@ import React from 'react';
 const IngredientCard = ({ ingredient, onSelect }) => {
   return (
     <div 
-      className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer hover:shadow-lg transition-shadow"
+      className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer hover:shadow-lg transition-shadow w-24 flex justify-center w-full flex-wrap gap-3"
       onClick={() => onSelect(ingredient)}
     >
       <img 
         src={ingredient.image} 
         alt={ingredient.name} 
-        className="w-full h-20 object-contain" //rounded
+        className="w-full h-12 object-contain" //rounded
       />
       <div className="p-2">
         <h3 className="font-bold text-sm">{ingredient.name}</h3>

@@ -15,7 +15,7 @@ function App() {
   const [selectedIngredients, setSelectedIngredients] = useState([]);
 
   const kitchenImage = `${publicUrl}/images/kitchen1.jpg`;
-  console.log('kitchenImage →', kitchenImage);
+  //console.log('kitchenImage →', kitchenImage);
   // Disable scrolling on mount and restore on unmount
   useEffect(() => {
     document.body.style.overflow = 'hidden'; // disable scroll
@@ -80,7 +80,7 @@ function App() {
       border: '4px solid lime' // debug border
     }}
   >
-    {/* ✅ Debug Test: confirm image + visibility */}
+    {/* ✅ Debug Test: confirm image + visibility 
     <div
       style={{
         backgroundImage: `url(${kitchenImage})`,
@@ -94,13 +94,13 @@ function App() {
       }}
     >
       <h1 style={{ color: 'white' }}>TEST</h1>
-    </div>
+    </div>*/}
 
     {/* Main layout */}
     <div className="min-h-screen flex flex-col" style={{ height: '100vh' }}>
       {/* Header */}
       <header className="app-header text-white flex justify-center items-center flex-col">
-        <h1 className="text-3xl font-bold text-center mb-2">Smok Gastronomy Explorer</h1>
+        <h1 className="text-3xl font-bold text-center -mb-1">Smok Gastronomy Explorer</h1>
         {selectedPlayer && (
           <div className="text-center">
             <span className="font-bold text-purple-900">
@@ -109,9 +109,9 @@ function App() {
           </div>
         )}
       </header>
-
+        
         {/* Main Content */}
-        <main className="flex-1 overflow-y-auto px-4" style={{ paddingBottom: '20px' }}>
+        <main className="flex-1 overflow-y-auto px-4" style={{ paddingBottom: '120px' }}>
           {step === 'player' && (
             <PlayerSelection onSelectPlayer={handleSelectPlayer} />
           )}
@@ -126,7 +126,7 @@ function App() {
           {step === 'ingredients' && (
             <>
               {/* Header & Back Button */}
-              <div className="mb-4 flex justify-between items-center">
+              <div className="mb-2 flex justify-between items-center">
                 <button
                   onClick={goBack}
                   className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors flex items-center"
@@ -148,12 +148,11 @@ function App() {
               </div>
 
               {/* Start Cooking Button */}
-              <div className="mt-8 flex justify-center">
+              <div className="mt-2 flex justify-center">
                 <button
                   onClick={startCooking}
                   disabled={selectedIngredients.length === 0 || hasCooked}
-                  className="bg-yellow-500 text-white px-6 py-3 rounded-lg font-bold disabled:opacity-50 disabled:cursor-not-allowed"
-                >
+                  className="bg-yellow-500 text-white px-6 py-3 rounded-lg font-bold disabled:opacity-50 disabled:cursor-not-allowed">
                   Start Cooking!
                 </button>
               </div>

@@ -297,7 +297,7 @@ const ingredients = [
   // Vegetables (15)
   {
     id: 42,
-    name: "Tomato",
+    name: "Tomato(Botanically-Fruit)",
     category: "vegetables",
     image:
       'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="300" height="200"><path d="M30,30 C40,20 60,20 70,30 C80,40 80,60 70,70 C60,80 40,80 30,70 C20,60 20,40 30,30 Z" fill="%23FF6347"/><path d="M40,20 L60,20" stroke="%23660000" stroke-width="2"/></svg>',
@@ -325,7 +325,7 @@ const ingredients = [
   },
   {
     id: 46,
-    name: "Spinach",
+    name: "Artichoke",
     category: "vegetables",
     image:
       'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="300" height="200"><path d="M30,30 C40,20 60,20 70,30 C80,40 80,60 70,70 C60,80 40,80 30,70 C20,60 20,40 30,30 Z" fill="%23228B22"/><path d="M40,40 L60,40" stroke="%23006400" stroke-width="2"/><path d="M35,50 L65,50" stroke="%23006400" stroke-width="2"/><path d="M30,60 L70,60" stroke="%23006400" stroke-width="2"/></svg>',
@@ -431,7 +431,7 @@ const ingredients = [
       'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="300" height="200"><path d="M30,30 C40,20 60,20 70,30 C80,40 80,60 70,70 C60,80 40,80 30,70 C20,60 20,40 30,30 Z" fill="%23808080"/><path d="M40,20 L60,20" stroke="%23000000" stroke-width="2"/><path d="M45,15 L55,15" stroke="%23000000" stroke-width="2"/><path d="M40,80 L60,80" stroke="%23000000" stroke-width="2"/></svg>',
   },
 
-  // Grains (7)
+  // Grains (8)
   {
     id: 61,
     name: "Wheat",
@@ -481,35 +481,61 @@ const ingredients = [
     image:
       'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="300" height="200"><circle cx="50" cy="50" r="40" fill="%23FF6347"/><circle cx="50" cy="50" r="30" fill="%23FFFFFF"/></svg>',
   },
-
-  // Nuts (4)
-  {
+{
     id: 68,
+    name: "Oats",
+    category: "grains",
+    image:
+      'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="300" height="200"><circle cx="50" cy="50" r="40" fill="%23FF6347"/><circle cx="50" cy="50" r="30" fill="%23FFFFFF"/></svg>',
+  },
+  // Nuts (8)
+  {
+     id: 69,
     name: "Almonds",
     category: "nuts",
-    image:
-      'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="300" height="200"><ellipse cx="50" cy="50" rx="40" ry="30" fill="%23FFD700"/></svg>',
-  },
-  {
-    id: 69,
-    name: "Walnuts",
-    category: "nuts",
-    image:
-      'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="300" height="200"><ellipse cx="50" cy="50" rx="40" ry="30" fill="%23808080"/></svg>',
+    image: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="300" height="200"><ellipse cx="50" cy="50" rx="40" ry="30" fill="%23FFD700"/></svg>',
   },
   {
     id: 70,
-    name: "Pecans",
+    name: "Chestnuts",
     category: "nuts",
-    image:
-      'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="300" height="200"><ellipse cx="50" cy="50" rx="40" ry="30" fill="%23D2691E"/></svg>',
+    image: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="300" height="200"><ellipse cx="50" cy="50" rx="30" ry="20" fill="%23FFA500"/></svg>',
   },
   {
     id: 71,
     name: "Cashews",
     category: "nuts",
-    image:
-      'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="300" height="200"><ellipse cx="50" cy="50" rx="30" ry="20" fill="%23FFA500"/></svg>',
+    image: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="300" height="200"><path d="M30,30 C40,20 60,20 70,30 C80,40 80,60 70,70 C60,80 40,80 30,70 C20,60 20,40 30,30 Z" fill="%23808080"/><path d="M40,20 L60,20" stroke="%23000000" stroke-width="2"/><path d="M45,15 L55,15" stroke="%23000000" stroke-width="2"/><path d="M40,80 L60,80" stroke="%23000000" stroke-width="2"/></svg>',
+  },
+  {
+    id: 72,
+    name: "Macadamia",
+    category: "nuts",
+    image: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="300" height="200"><ellipse cx="50" cy="50" rx="30" ry="20" fill="%23FFA500"/></svg>',
+  },
+  {
+    id: 73,
+    name: "Pecans",
+    category: "nuts",
+    image: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="300" height="200"><ellipse cx="50" cy="50" rx="40" ry="30" fill="%23D2691E"/></svg>',
+  },
+  {
+    id: 74,
+    name: "Peanuts",
+    category: "nuts",
+    image: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="300" height="200"><ellipse cx="50" cy="50" rx="30" ry="20" fill="%23FFA500"/></svg>',
+  },
+  {
+    id: 75,
+    name: "Pistachios",
+    category: "nuts",
+    image:  'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="300" height="200"><rect x="30" y="30" width="40" height="60" rx="20" fill="%23008000"/></svg>',
+  },
+  {
+    id: 76,
+    name: "Walnuts",
+    category: "nuts",
+    image: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="300" height="200"><ellipse cx="50" cy="50" rx="40" ry="30" fill="%23808080"/></svg>',
   },
 ];
 
