@@ -1,15 +1,15 @@
 // SMOK=DRAGON(POLISH)
-app made for children 3-8 years old, with a focus on food and gastronomy. The app is designed to be interactive and educational, with a focus on introducing children to different types of food and their cultural significance. The app includes a variety of games and activities that encourage children to explore the world of food and learn about different cuisines from around the world.
-# React + Vite Project Setup
+app made for children 3-8 years old, with a focus on food and gastronomy. The app is designed to be interactive and educational, with a focus on introducing children to different types of foods.
+# React
 
-# React + Vite
+# React
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+//- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+//- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 ## Expanding the ESLint configuration
 
@@ -50,7 +50,7 @@ smok_gastronomy_ex/
 
 //  ## Summary of Key Files
 
-- **`vite.config.js`**: Configuration for Vite bundler.
+- **`vite.config.js`**: Configuration for Vite bundler.//N/A
 - **`.eslintrc.js`**: ESLint rules for code quality.
 - **`index.html`**: Main HTML template.
 - **`src/`**: Source folder containing React components, assets, and styles.
@@ -68,13 +68,13 @@ smok_gastronomy_ex/
 1. **Install dependencies**:
 ```bash
 npm install
-2.npm run dev
+2.npm start
 
 smok_gastronomy_explorer/
 ├── public/
 │   ├── images/
-│   ├── pwa-manifest.json
-│   └── service-worker.js
+│   ├── pwa-manifest.json//N/A
+│   └── service-worker.js//N/A
 ├── src/
 │   ├── components/
 │   │   ├── IngredientCard.jsx
@@ -87,5 +87,5 @@ smok_gastronomy_explorer/
 ├── .gitignore
 ├── package.json
 ├── tailwind.config.js    # ← Tailwind configured here
-├── vite.config.js
+├── vite.config.js//N/A
 └── documentation.txt
