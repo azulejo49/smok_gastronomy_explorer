@@ -3,7 +3,7 @@ import React from 'react';
 const IngredientCard = ({ ingredient, onSelect }) => {
   return (
     <div 
-      className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer hover:shadow-lg transition-shadow w-24 flex justify-center w-full flex-wrap gap-3"
+      className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer hover:shadow-lg transition-shadow w-24 flex justify-center flex-wrap gap-3"
       onClick={() => onSelect(ingredient)}
     >
       <img 

@@ -7,19 +7,19 @@ import PlayerSelection from './components/PlayerSelection';
 import CategorySelection from './components/CategorySelection';
 import { publicUrl } from './utils/path';
 
-const allImages = [
-  { src: 'oricar_.jpg', alt: 'Oricar' },
-  { src: 'smok.jpg', alt: 'Smok' },
-  { src: 'amiramcar_.jpg', alt: 'Amiramcar' },
-  { src: 'hilacar_.jpg', alt: 'Hilacar' },
-  { src: 'lavicar_.jpg', alt: 'Lavicar' },
-  { src: 'marley.jpg', alt: 'Marley' },
-  { src: 'shcar.jpg', alt: 'Shcar' },
-  { src: 'blacktruff1.jpg', alt: 'Black Truff' },
-  { src: 'whitetruff2.jpg', alt: 'White Truff 2' },
-  { src: 'kitchen1.jpg', alt: 'Kitchen' },
-  { src: 'placeholder.jpg', alt: 'Placeholder' },
-];
+//const allImages = [
+  //{ src: '/oricar_.jpg', alt: 'Oricar' },
+  //{ src: 'smok.jpg', alt: 'Smok' },
+  //{ src: 'amiramcar_.jpg', alt: 'Amiramcar' },
+  //{ src: 'hilacar_.jpg', alt: 'Hilacar' },
+  //{ src: 'lavicar_.jpg', alt: 'Lavicar' },
+  //{ src: 'marley.jpg', alt: 'Marley' },
+  //{ src: 'shcar.jpg', alt: 'Shcar' },
+  //{ src: 'blacktruff1.jpg', alt: 'Black Truff' },
+  //{ src: 'whitetruff2.jpg', alt: 'White Truff 2' },
+  //{ src: 'kitchen1.jpg', alt: 'Kitchen' },
+  //{ src: 'placeholder.jpg', alt: 'Placeholder' },
+//];
 
 function App() {
   const [hasCooked, setHasCooked] = useState(false);
@@ -105,7 +105,7 @@ function App() {
         )}
       </header>
 
-      {/* Lazy-loaded image preview */}
+      {/* Lazy-loaded image preview 
       <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 p-4">
         {allImages.map(({ src, alt }) => (
           <img
@@ -116,7 +116,7 @@ function App() {
             className="rounded-xl shadow-md w-full object-cover"
           />
         ))}
-      </section>
+      </section>*/}
 
       <main className="flex-1 overflow-y-auto px-4" style={{ paddingBottom: '120px' }}>
         {step === 'player' && <PlayerSelection onSelectPlayer={handleSelectPlayer} />}
