@@ -3,15 +3,15 @@ import React from 'react';
 const IngredientCard = ({ ingredient, onSelect }) => {
   return (
     <div 
-      className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer hover:shadow-lg transition-shadow w-24 flex justify-center flex-wrap gap-3"
+      className="bg-white rounded-lg shadow-md cursor-pointer hover:shadow-lg transition-shadow w-32 sm:w-40 flex flex-col items-center p-4"
       onClick={() => onSelect(ingredient)}
     >
       <img 
         src={ingredient.image} 
         alt={ingredient.name} 
-        className="w-full h-12 object-contain" //rounded
+        className="w-full h-18 object-cover rounded" //rounded/cover?
       />
-      <div className="p-2">
+      <div className="mt-2 text-center w-full">
         <h3 className="font-bold text-sm">{ingredient.name}</h3>
         <p className="text-gray-600 text-sm">
           {ingredient.category.charAt(0).toUpperCase() + ingredient.category.slice(1)}
