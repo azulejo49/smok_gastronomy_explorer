@@ -566,3 +566,11 @@ npm run deploy
 development-export const publicUrl = process.env.NODE_ENV === 'production'
   ? process.env.PUBLIC_URL
   : '';
+  ------------------------------
+  ---------------------------------
+  ----UWAGA----
+-FINAL SOLUTION-
+top of document-import { publicUrl } from '../utils/path'; -- all assets .. public/my-assets/images -icons---src/utils/path.js-export const publicUrl = process.env.NODE_ENV === 'production'
+  ? '/smok_gastronomy_explorer'
+  : '';
+images-url-{ id: 'marley', name: 'MARLEY', image: `${publicUrl}/my-assets/images/marley.jpg` },(when importing import { publicUrl } from '../utils/path'; , manifest.json-"start_url": "/smok_gastronomy_explorer/", , "src": "/smok_gastronomy_explorer/my-assets/icons/icon-192.png", package.json-"homepage": "https://azulejo49.github.io/smok_gastronomy_explorer",

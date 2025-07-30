@@ -7,20 +7,6 @@ import PlayerSelection from './components/PlayerSelection';
 import CategorySelection from './components/CategorySelection';
 import { publicUrl } from './utils/path';
 
-//const allImages = [
-  //{ src: '/oricar_.jpg', alt: 'Oricar' },
-  //{ src: 'smok.jpg', alt: 'Smok' },
-  //{ src: 'amiramcar_.jpg', alt: 'Amiramcar' },
-  //{ src: 'hilacar_.jpg', alt: 'Hilacar' },
-  //{ src: 'lavicar_.jpg', alt: 'Lavicar' },
-  //{ src: 'marley.jpg', alt: 'Marley' },
-  //{ src: 'shcar.jpg', alt: 'Shcar' },
-  //{ src: 'blacktruff1.jpg', alt: 'Black Truff' },
-  //{ src: 'whitetruff2.jpg', alt: 'White Truff 2' },
-  //{ src: 'kitchen1.jpg', alt: 'Kitchen' },
-  //{ src: 'placeholder.jpg', alt: 'Placeholder' },
-//];
-
 function App() {
   const [hasCooked, setHasCooked] = useState(false);
   const [step, setStep] = useState('player');
@@ -28,7 +14,8 @@ function App() {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedIngredients, setSelectedIngredients] = useState([]);
 
-  const kitchenImage = `${publicUrl}/images/kitchen1.jpg`;
+  
+  const kitchenImage = `${publicUrl}/my-assets/images/kitchen1.jpg`;
    //console.log('kitchenImage →', kitchenImage);
   // Disable scrolling on mount and restore on unmount
   useEffect(() => {

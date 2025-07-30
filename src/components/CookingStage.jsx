@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import { publicUrl } from '../utils/path';
 const CookingStage = ({ selectedIngredients, onBack, onClearIngredients }) => {
   // State variables
   const [cookingStep, setCookingStep] = useState(0);
@@ -16,18 +16,20 @@ const CookingStage = ({ selectedIngredients, onBack, onClearIngredients }) => {
   const [selectedTruffles, setSelectedTruffles] = useState([]);
   const [isFinishing, setIsFinishing] = useState(false);
   const [isCooking, setIsCooking] = useState(true); // New state to track cooking status
-  // Truffle objects
+
+  // Truffle objects with dynamic image paths
   const BlackTruffle = {
     id: "truffle-001",
     name: "Tuber Melanosporum",
     description: "Rare black truffle with earthy aroma",
-    image: "/images/blacktruff1.jpg",
+    image: `${publicUrl}/my-assets/images/blacktruff1.jpg`,
   };
+
   const WhiteTruffle = {
     id: "truffle-002",
     name: "Tuber Magnatum Pico",
     description: "Rare white truffle with earthy aroma",
-    image: "/images/whitetruff2.jpg",
+    image: `${publicUrl}/my-assets/images/whitetruff2.jpg`,
   };
 
   // Helper to add ingredients
@@ -825,10 +827,10 @@ const CookingStage = ({ selectedIngredients, onBack, onClearIngredients }) => {
                   title="click to add Tuber-Melanosporum"
                 >
                   <img
-                    src="/images/blacktruff1.jpg"
-                    alt="Black Truffle"
+                  src={`${publicUrl}/my-assets/images/blacktruff1.jpg`}
+                     alt="Black Truffle"
                     className="w-full h-full object-cover rounded"
-                  />
+                      />
                 </div>
               )}
               {showWhiteTruffle && (
@@ -838,10 +840,10 @@ const CookingStage = ({ selectedIngredients, onBack, onClearIngredients }) => {
                   title="Click to add Tuber-Magnatum-Pico"
                 >
                   <img
-                    src="/images/whitetruff2.jpg"
-                    alt="White Truffle"
-                    className="w-full h-full object-cover rounded"
-                  />
+  src={`${publicUrl}/my-assets/images/whitetruff2.jpg`}
+  alt="Black Truffle"
+  className="w-full h-full object-cover rounded"
+/>
                 </div>
               )}
             </div>
@@ -903,27 +905,27 @@ const CookingStage = ({ selectedIngredients, onBack, onClearIngredients }) => {
                 key={ing.id}
                 className="bg-white rounded-lg shadow-md p-2 flex items-center transform transition-transform hover:scale-105"
               >
-                {/* show truffle images if selected */}
-                {ing.name === "Black Truffle" &&
-                  selectedTruffles.includes("black") && (
-                    <div className="w-10 h-10 object-cover rounded-full mr-2">
-                      <img
-                        src="/images/blacktruff1.jpg"
-                        alt="Black Truffle"
-                        className="w-full h-full object-cover rounded-full"
-                      />
-                    </div>
-                  )}
-                {ing.name === "White Truffle" &&
-                  selectedTruffles.includes("white") && (
-                    <div className="w-10 h-10 object-cover rounded-full mr-2">
-                      <img
-                        src="/images/whitetruff2.jpg"
-                        alt="White Truffle"
-                        className="w-full h-full object-cover rounded-full"
-                      />
-                    </div>
-                  )}
+              {/* show truffle images if selected */}
+{ing.name === "Black Truffle" &&
+  selectedTruffles.includes("black") && (
+    <div className="w-10 h-10 object-cover rounded-full mr-2">
+      <img
+        src={`${publicUrl}/my-assets/images/blacktruff1.jpg`}
+        alt="Black Truffle"
+        className="w-full h-full object-cover rounded-full"
+      />
+    </div>
+  )}
+{ing.name === "White Truffle" &&
+  selectedTruffles.includes("white") && (
+    <div className="w-10 h-10 object-cover rounded-full mr-2">
+      <img
+        src={`${publicUrl}/my-assets/images/whitetruff2.jpg`}
+        alt="White Truffle"
+        className="w-full h-full object-cover rounded-full"
+      />
+    </div>
+  )}
                 {/* Ingredient image */}
                 <img
                   src={ing.image}
