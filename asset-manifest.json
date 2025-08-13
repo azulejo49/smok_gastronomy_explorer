@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/smok_gastronomy_explorer/static/css/main.411d30dd.css",
-    "main.js": "/smok_gastronomy_explorer/static/js/main.9a3752cb.js",
+    "main.css": "/smok_gastronomy_explorer/static/css/main.c0e659bb.css",
+    "main.js": "/smok_gastronomy_explorer/static/js/main.b0d92350.js",
     "index.html": "/smok_gastronomy_explorer/index.html",
-    "main.411d30dd.css.map": "/smok_gastronomy_explorer/static/css/main.411d30dd.css.map",
-    "main.9a3752cb.js.map": "/smok_gastronomy_explorer/static/js/main.9a3752cb.js.map"
+    "main.c0e659bb.css.map": "/smok_gastronomy_explorer/static/css/main.c0e659bb.css.map",
+    "main.b0d92350.js.map": "/smok_gastronomy_explorer/static/js/main.b0d92350.js.map"
   },
   "entrypoints": [
-    "static/css/main.411d30dd.css",
-    "static/js/main.9a3752cb.js"
+    "static/css/main.c0e659bb.css",
+    "static/js/main.b0d92350.js"
   ]
 }
