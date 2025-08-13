@@ -31,6 +31,10 @@ const PlayerSelection = ({ onSelectPlayer }) => {
           <div
             key={player.id}
             className="bg-white p-4 rounded-lg shadow-md cursor-pointer hover:shadow-lg transition-shadow flex-shrink-0"
+           // style={{
+            // border: '3px solid transparent', // start with transparent border
+            //animation: 'animate-border 2s infinite',
+           // }}
             onClick={() => onSelectPlayer(player)}
           >
             <img
@@ -39,8 +43,9 @@ const PlayerSelection = ({ onSelectPlayer }) => {
               style={{
                 width: '150px',
                 height: '150px',
-                border: '3px solid red',
-                objectFit: 'cover'
+                border: '3px solid transparent',
+                objectFit: 'cover',
+                animation: 'animate-border 2s infinite'
               }}
             />
             <h3 className="text-center font-semibold">{player.name}</h3>
@@ -53,6 +58,10 @@ const PlayerSelection = ({ onSelectPlayer }) => {
           <div
             key={player.id}
             className="bg-white p-4 rounded-lg shadow-md cursor-pointer hover:shadow-lg transition-shadow flex-shrink-0"
+           //  style={{
+           //  border: '3px solid transparent', // start with transparent border
+           // animation: 'animate-border 2s infinite',
+           // }}
             onClick={() => onSelectPlayer(player)}
           >
             <img
@@ -61,8 +70,9 @@ const PlayerSelection = ({ onSelectPlayer }) => {
               style={{
                 width: '150px',
                 height: '150px',
-                border: '3px solid blue',
-                objectFit: 'cover'
+                border: '3px solid transparent',
+                objectFit: 'cover',
+                animation: 'animate-border 2s infinite'
               }}
             />
             <h3 className="text-center font-semibold">{player.name}</h3>

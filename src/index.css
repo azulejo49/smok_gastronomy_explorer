@@ -143,6 +143,17 @@ body {
     transform: translateY(0);
   }
 }
+@keyframes animate-border {
+  0% {
+    border-color: rgb(33, 177, 43);
+  }
+  50% {
+    border-color: blue;
+  }
+  100% {
+    border-color: rgb(163, 237, 83);
+  }
+}
 
 /* Progress bar - minimal height and width 
 .cooking-progress {
