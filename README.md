@@ -13,7 +13,7 @@ Currently, two official plugins are available:
 
 ## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+If you are developing a production application, use TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
 
 
 # React + Vite Project Structure
@@ -69,4 +69,24 @@ smok_gastronomy_ex/
 1. **Install dependencies**:
 ```bash
 npm install
-2.npm start
+2.npm run dev
+
+smok_gastronomy_explorer/
+├── public/
+│   ├── images/
+│   ├── pwa-manifest.json
+│   └── service-worker.js
+├── src/
+│   ├── components/
+│   │   ├── IngredientCard.jsx
+│   │   └── CookingStage.jsx
+│   ├── data/
+│   │   └── ingredients.js
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
+├── .gitignore
+├── package.json
+├── tailwind.config.js    # ← Tailwind configured here
+├── vite.config.js
+└── documentation.txt
